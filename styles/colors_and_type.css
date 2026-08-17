@@ -1,0 +1,217 @@
+/* ============================================================
+   Scleroderma Workshop — Foundational Tokens
+   Source: figma-export.json (Scleroderma Website)
+   ============================================================ */
+
+/* ---- FONTS ----
+   Host Grotesk is the brand face (Figma textStyles). Variable font supplied by the brand,
+   covering 300–800 in a single binary. Resolve paths from the file that imports this CSS.
+*/
+@font-face {
+  font-family: "Host Grotesk";
+  font-style: normal;
+  font-weight: 300 800;
+  font-display: swap;
+  src: url("fonts/HostGrotesk-VariableFont_wght.ttf") format("truetype-variations"),
+       url("fonts/HostGrotesk-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  /* ---- COLOR SCALES ----
+     Source: uploaded brand swatches (uploads/Colors.png).
+     Scales run DARK → LIGHT. `0` is the deepest stop, `4` is the lightest.
+  */
+
+  /* Blue — dark → light */
+  --blue-0: #173446;   /* deep ink, headlines on light, primary buttons */
+  --blue-1: #49697C;   /* muted body-on-paper option, secondary text */
+  --blue-2: #7397AB;   /* primary brand blue, identity spot */
+  --blue-3: #B1CEE0;   /* pale fills, secondary chips */
+  --blue-4: #E9F6FE;   /* wash, surfaces, hover tint */
+
+  /* Orange — dark → light */
+  --orange-0: #C94714; /* primary accent, CTAs, links — the saturated stop */
+  --orange-1: #F17B4C; /* warm secondary, hover-out tint */
+  --orange-2: #FFC9A4; /* pale fill, highlight chips */
+  --orange-3: #FAEDE3; /* wash, callout backgrounds */
+  --orange-4: #FAF5F1; /* near-paper, ultra-soft surface */
+
+  /* Neutrals — warm-grey family that reads as part of the same world */
+  --ink-0:   #FFFFFF;
+  --ink-1:   #F7F6F2; /* page tint (warm paper) */
+  --ink-2:   #E8E6DF; /* hairlines, dividers */
+  --ink-3:   #B9B5AB; /* muted */
+  --ink-4:   #6E6A60; /* body secondary */
+  --ink-5:   #1F2A33; /* body primary — blue-tinted near-black, of-a-piece with blue-0 */
+
+  /* ---- SEMANTIC COLOR ALIASES ---- */
+  --bg-page:        var(--ink-1);
+  --bg-surface:     var(--ink-0);
+  --bg-sunken:      var(--blue-4);
+  --bg-accent-soft: var(--orange-3);
+
+  --fg-1: var(--ink-5);   /* primary text */
+  --fg-2: var(--ink-4);   /* secondary text */
+  --fg-3: var(--ink-3);   /* tertiary / placeholder */
+  --fg-on-blue:   var(--ink-0);
+  --fg-on-orange: var(--ink-0);
+
+  --brand:        var(--blue-2);   /* identity spot — chips, label kickers */
+  --brand-deep:   var(--blue-0);   /* headlines, primary buttons */
+  --brand-hover:  var(--blue-0);
+  --accent:       var(--orange-0); /* CTAs, links, awareness mark */
+  --accent-deep:  var(--orange-0); /* text-safe accent on light */
+  --accent-hover: #A33810;         /* darkened orange-0 for primary CTA hover */
+
+  --border:        var(--ink-2);
+  --border-strong: var(--ink-3);
+  --focus-ring:    color-mix(in oklab, var(--orange-0) 50%, transparent);
+
+  /* Status (derived, not in brand swatches — restrained to feel on-brand) */
+  --success: #2F7A4F;
+  --warning: var(--orange-0);
+  --danger:  #B23A3A;
+
+  /* ---- TYPE ---- */
+  --font-display: "Host Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-body:    "Host Grotesk", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Sizes (px) — from figma textStyles */
+  --fs-h0: 96px;
+  --fs-h1: 64px;
+  --fs-h2: 48px;
+  --fs-h3: 32px;
+  --fs-h4: 24px;
+  --fs-h5: 16px;
+  --fs-body: 16px;
+  --fs-footnote: 12px;
+  --fs-label-sm: 16px;
+  --fs-label-lg: 24px;
+  --fs-button: 16px;
+
+  --lh-display: 1.05;
+  --lh-heading: 1.15;
+  --lh-body:    1.55;
+  --lh-tight:   1.25;
+
+  --tracking-label: 0.32em;   /* 32% from figma */
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-semi:    600;
+  --weight-bold:    700;
+
+  /* ---- SPACING (4px base) ---- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ---- RADII ---- */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 999px;
+
+  /* ---- SHADOWS — soft, paper-like, tinted with the brand deep-ink ---- */
+  --shadow-1: 0 1px 0 rgba(23, 52, 70, 0.04), 0 1px 2px rgba(23, 52, 70, 0.06);
+  --shadow-2: 0 2px 4px rgba(23, 52, 70, 0.06), 0 6px 16px rgba(23, 52, 70, 0.08);
+  --shadow-3: 0 8px 20px rgba(23, 52, 70, 0.10), 0 20px 40px rgba(23, 52, 70, 0.10);
+  --shadow-inset: inset 0 0 0 1px rgba(23, 52, 70, 0.06);
+
+  /* ---- MOTION ---- */
+  --ease-standard: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --ease-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 520ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE — element-level defaults
+   ============================================================ */
+
+html, body {
+  background: var(--bg-page);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  color: var(--brand-deep);
+  line-height: var(--lh-heading);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.display, h1.display { font-size: var(--fs-h0); line-height: var(--lh-display); }
+h1 { font-size: var(--fs-h1); line-height: var(--lh-display); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+h4 { font-size: var(--fs-h4); }
+h5 { font-size: var(--fs-h5); line-height: var(--lh-tight); }
+
+p  { margin: 0 0 var(--space-4) 0; text-wrap: pretty; }
+p:last-child { margin-bottom: 0; }
+
+small, .footnote {
+  font-size: var(--fs-footnote);
+  line-height: var(--lh-body);
+  color: var(--fg-2);
+}
+
+.label, .label-sm {
+  font-size: var(--fs-label-sm);
+  font-weight: var(--weight-semi);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.label-lg {
+  font-size: var(--fs-label-lg);
+  font-weight: var(--weight-semi);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+a {
+  color: var(--accent-deep);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-2) var(--ease-standard);
+}
+a:hover { color: var(--accent); }
+
+code, pre, kbd {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+::selection { background: var(--orange-2); color: var(--ink-5); }
+
+:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}

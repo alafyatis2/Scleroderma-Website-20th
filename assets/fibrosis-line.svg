@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" preserveAspectRatio="none" role="img" aria-label="Fibrosis line motif">
+  
+  <path d="M0 240 C 120 220, 180 160, 280 180 S 460 280, 600 220 S 820 140, 940 200 S 1140 260, 1200 200" fill="none" stroke="#C94714" stroke-width="2" stroke-linecap="round" opacity="0.75"></path>
+  <path d="M0 260 C 140 250, 220 200, 320 220 S 500 300, 640 250 S 840 180, 980 230 S 1160 280, 1200 240" fill="none" stroke="#F17B4C" stroke-width="1.5" stroke-linecap="round" opacity="0.6"></path>
+  <path d="M0 280 C 160 280, 240 240, 360 260 S 560 320, 680 280 S 880 220, 1020 260 S 1180 300, 1200 280" fill="none" stroke="#7397AB" stroke-width="1" stroke-linecap="round" opacity="0.4"></path>
+</svg>
